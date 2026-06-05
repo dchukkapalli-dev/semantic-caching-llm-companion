@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this companion artifact, please cite it as below."
+title: "Semantic Caching and Response Reuse for LLM Services — Companion Artifact"
+version: 1.0.0
+date-released: "2026-05-31"
+license: MIT
+type: software
+authors:
+  - given-names: Divya
+    family-names: Chukkapalli
+    orcid: "https://orcid.org/0009-0005-4691-3395"
+  - given-names: Sanjay
+    family-names: Mishra
+    orcid: "https://orcid.org/0009-0006-7854-996X"
+  - given-names: Ganesh R
+    family-names: Naik
+    orcid: "https://orcid.org/0000-0003-1790-9838"
+keywords:
+  - semantic caching
+  - LLM serving
+  - response reuse
+  - false-hit rate
+  - cache verification
+  - benchmark
+  - contract validation

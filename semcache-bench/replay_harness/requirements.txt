@@ -1,0 +1,6 @@
+# Optional dependencies for the cpu_pilot.py "real embedding" backend.
+# The pilot ALSO runs with ZERO of these installed: if the import fails it
+# falls back to a deterministic stdlib hashing pseudo-embedding. Install these
+# only if you want the all-MiniLM-L6-v2 sentence-transformer backend instead.
+torch==2.2.2
+sentence-transformers==2.7.0

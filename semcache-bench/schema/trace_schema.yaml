@@ -1,0 +1,119 @@
+# Trace schema for the semantic-caching contract-validation harness.
+#
+# This is a PLAIN, human-readable YAML description of the per-request trace
+# record format. It is intentionally NOT a JSON-Schema document (no $ref,
+# no $schema, no jsonschema constructs) so it can be read without tooling and
+# kept in lock-step with validate_trace.py, which hardcodes the same field
+# spec as an inline Python dict.
+#
+# Each line of a *.jsonl trace file is one JSON object = one cache decision
+# for one request. Field names and the cache_decision / verification_method
+# enumerations match the metric and terminology definitions in the survey
+# (false-hit rate, hit/miss/admit decisions, threshold/llm_judge/conformal
+# verification).
+#
+# Legend:
+#   type        Python/JSON type expected.
+#   required    true  -> must be present and non-null on every record.
+#               false -> may be omitted, or present with a null value.
+
+format: jsonl                # one JSON object per line
+record: semantic_cache_trace
+version: 1.0.0
+
+required_fields:
+
+  request_id:
+    type: str
+    required: true
+    semantics: Unique identifier for the incoming request.
+
+  timestamp:
+    type: float
+    required: true
+    semantics: Wall-clock arrival time, seconds since the Unix epoch.
+
+  prompt_hash:
+    type: str
+    required: true
+    semantics: Stable hash of the (normalized) prompt text. Privacy-preserving
+               key; the raw prompt is never stored in the trace.
+
+  embedding_model:
+    type: str
+    required: true
+    semantics: Identifier of the embedding model used to vectorize the prompt
+               (e.g. "all-MiniLM-L6-v2" or "stdlib-hash-fallback").
+
+  similarity_threshold:
+    type: float
+    required: true
+    semantics: Cosine-similarity acceptance threshold tau in effect for this
+               decision. A candidate is a hit only if its score >= threshold.
+
+  cache_decision:
+    type: str
+    required: true
+    enum: [hit, miss, admit]
+    semantics: Outcome of the lookup. "hit" = served from cache; "miss" = no
+               acceptable entry found; "admit" = miss whose freshly generated
+               response was inserted into the cache.
+
+  latency_ms:
+    type: float
+    required: true
+    semantics: End-to-end latency for serving this request, in milliseconds.
+
+  model_version:
+    type: str
+    required: true
+    semantics: Version tag of the generative model whose responses are cached.
+               Used to reason about staleness / invalidation under updates.
+
+optional_fields:
+
+  matched_entry_id:
+    type: str
+    required: false
+    semantics: ID of the cache entry matched on a hit. Null on miss/admit.
+
+  similarity_score:
+    type: float
+    required: false
+    semantics: Cosine similarity of the best candidate. Null when no candidate
+               was scored.
+
+  served_response_id:
+    type: str
+    required: false
+    semantics: ID of the response actually returned to the caller.
+
+  verified:
+    type: bool
+    required: false
+    semantics: Whether a served hit was checked by a verification mechanism.
+
+  verification_method:
+    type: str
+    required: false
+    enum: [none, threshold, llm_judge, conformal]
+    semantics: How (if at all) the hit was validated. "threshold" = bare
+               similarity gate; "llm_judge" = LLM-as-judge; "conformal" =
+               conformal/learned-threshold error bound; "none" = unverified.
+
+  is_false_hit:
+    type: bool
+    required: false
+    semantics: Ground-truth label (when known) that a served hit was
+               semantically wrong. Drives false-hit-rate measurement.
+
+  cost_usd:
+    type: float
+    required: false
+    semantics: Estimated dollar cost attributed to serving this request.
+
+  corpus_version:
+    type: str
+    required: false
+    semantics: Version tag of the retrieval corpus (for RAG-style caches),
+               used to reason about corpus-update invalidation.

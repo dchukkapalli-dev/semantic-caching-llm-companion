@@ -1,0 +1,3 @@
+semcache-bench/replay_harness/pilot_trace.jsonl
+__pycache__/
+*.pyc

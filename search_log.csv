@@ -1,0 +1,7 @@
+database,query,date_run,n_hits,n_after_screen,notes
+ACM Digital Library,"(""semantic cache"" OR ""response reuse"") AND (""large language model"" OR LLM)",2026-05-20,58,21,"Full-text search; venue filter applied to systems/ML proceedings"
+IEEE Xplore,"(""semantic caching"" OR ""prompt cache"") AND (LLM OR ""language model"")",2026-05-20,41,14,"Metadata + abstract search; conference and journal records"
+USENIX,"semantic cache LLM serving inference reuse",2026-05-21,17,9,"OSDI/ATC/NSDI proceedings; manual relevance pass"
+DBLP,"semantic caching language model",2026-05-21,33,11,"Bibliographic hits; deduplicated against ACM/IEEE/USENIX"
+arXiv (cs.CL/cs.DC/cs.LG),"semantic cache OR prompt caching OR KV cache reuse",2026-05-22,74,17,"Preprints across three categories; preprints later matched to venue versions"
+Google Scholar,"semantic caching LLM correctness eviction distributed",2026-05-22,19,4,"Forward/backward snowballing seed; top relevance only to cap recall noise"

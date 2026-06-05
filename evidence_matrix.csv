@@ -1,0 +1,22 @@
+citekey,work_name,whats_cached,validation_method,correctness_guarantee,eviction_policy,distributed,security_aware,year,venue
+vcache25,vCache,raw response + embedding index,per-prompt learned threshold,yes,LRU over verified entries,partial,partial,2025,arXiv
+krites26,Krites,raw response,async LLM-as-judge serve-then-verify,partial,tiered admission + lazy invalidation,yes,partial,2026,arXiv
+continuouscache26,Continuous Semantic Cache,raw response + embedding index,threshold over continuous embedding space,yes,continuous streaming admission/eviction,—,no,2026,arXiv
+semanticcache25,Offline-to-Online Cache,raw response,learned threshold offline-trained adapted online,partial,learned admission policy,—,no,2025,arXiv
+exacthits26,Exact-to-Close-Enough,embedding index,embedding-similarity threshold,no,NP-hard offline + online heuristics,partial,no,2026,arXiv
+contextsummary25,Contextual Summaries,contextual summary,similarity over summarized context,no,summary-keyed admission,partial,no,2025,arXiv
+meancache24,MeanCache,raw response + per-user embedding index,federated similarity threshold,no,per-user local cache by similarity,yes,yes,2024,arXiv
+gptsemcache24,GPT Semantic Cache,raw response + embedding index,cosine-similarity threshold,no,threshold admission + standard eviction,partial,no,2024,arXiv
+keycollision26,Key Collision Attack,attacks embedding-index caches,attack paper (CacheAttack),no,—,yes,yes,2026,arXiv
+ensemble25,Ensemble Embedding,embedding index,ensemble-of-embeddings + threshold,partial,similarity admission,—,no,2025,arXiv
+promptcache24,Prompt-Cache via Embedding Sim.,raw response,embedding-similarity decision,yes,online utility-based admission,—,no,2024,arXiv
+gencache25,Generative Caching,generative cache,generation-time validation,partial,fragment-level admission/eviction,partial,no,2025,arXiv
+categoryaware25,Category-Aware Cache,raw response + embedding index by category,per-category threshold,partial,category-aware admission,partial,no,2025,arXiv
+gptcache23,GPTCache,raw response + embedding index,cosine-similarity threshold,no,LRU/FIFO over vector store,partial,no,2023,arXiv
+ragcache24,RAGCache,retrieved-knowledge KV state,exact/prefix match on chunks,no,knowledge-tree PGDSF replacement,yes,no,2024,arXiv
+cachegen24,CacheGen,KV cache (compressed/streamed),exact context match,no,stream/evict compressed KV,yes,no,2024,SIGCOMM
+promptcache_sys24,Prompt Cache,KV of reusable prompt modules,exact structural match,yes,module-level reuse,no,no,2024,arXiv
+sglang24,SGLang/RadixAttention,KV prefix (radix tree),exact token-prefix match,yes,LRU over radix tree,partial,no,2024,arXiv
+cachedattention24,CachedAttention,KV across turns,exact context match,yes,hierarchical KV scheduling,yes,no,2024,USENIX ATC
+mooncake24,Mooncake,KV cache (disaggregated),exact prefix match,yes,KVCache-centric scheduling,yes,no,2024,arXiv
+paged_attention23,vLLM/PagedAttention,KV blocks (intra-request),exact,yes,block-level paging + prefix sharing,partial,no,2023,SOSP
