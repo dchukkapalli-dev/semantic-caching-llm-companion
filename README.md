@@ -1,7 +1,7 @@
-# Companion Artifact — Semantic Caching and Response Reuse for LLM Services
+# Companion Artifact — Semantic Caching and Response Reuse for Large Language Model Services: A Survey
 
 Machine-readable companion for the survey *"Semantic Caching and Response Reuse
-for LLM Services."* It backs the manuscript's Data Availability statement,
+for Large Language Model Services: A Survey."* It backs the manuscript's Data Availability statement,
 evaluation section, and Contribution 5 with **runnable** artifacts.
 
 ## What this IS

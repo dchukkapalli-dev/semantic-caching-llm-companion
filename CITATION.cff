@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this companion artifact, please cite it as below."
-title: "Semantic Caching and Response Reuse for LLM Services — Companion Artifact"
+title: "Semantic Caching and Response Reuse for Large Language Model Services: A Survey — Companion Artifact"
 version: 1.0.0
 date-released: "2026-05-31"
 license: MIT
