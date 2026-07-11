@@ -1,20 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this companion artifact, please cite it as below."
 title: "Semantic Caching and Response Reuse for Large Language Model Services: A Survey — Companion Artifact"
-version: 1.0.2
+version: 1.0.3
 date-released: "2026-07-10"
-license:
-  - MIT
-  - CC-BY-4.0
+license: MIT
 type: software
-repository-code: "https://github.com/dchukkapalli-dev/semantic-caching-llm-companion"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.20551823"
-    description: "Concept DOI on Zenodo (always resolves to the latest version)"
-  - type: doi
-    value: "10.5281/zenodo.20551824"
-    description: "Version DOI on Zenodo for v1.0.0"
 authors:
   - given-names: Divya
     family-names: Chukkapalli
