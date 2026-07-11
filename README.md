@@ -20,6 +20,11 @@ the latest version; v1.0.0 specifically:
   (`evidence_matrix.csv`) underpinning the survey's taxonomy and PRISMA funnel.
 - A **scale-down CPU pilot** (`semcache-bench/replay_harness/cpu_pilot.py`) that
   exercises the schema end to end on a toy corpus and emits a conformant trace.
+- A **labeled operating-point pilot** (`semcache-bench/eval/labeled_frontier.py`)
+  that instantiates the paper's operating-point definition on the public MRPC
+  paraphrase corpus, reproducing the measured `(h, ε)` frontier (paper Table 3)
+  with two sentence encoders. It is an illustrative single-encoder pilot on a
+  public proxy — **not** a competitive benchmark of the surveyed systems.
 
 ## What this IS NOT
 
@@ -49,6 +54,11 @@ companion/
       cpu_pilot.py          # toy CPU semantic cache; emits pilot_trace.jsonl
       requirements.txt      # optional torch + sentence-transformers pins
       README.md             # scale-down framing + run instructions
+    eval/
+      labeled_frontier.py   # MRPC (h, epsilon) frontier pilot; reproduces paper Table 3
+      labeled_frontier*.csv # measured tau-sweep + matched-hit-rate operating points
+      requirements.txt      # optional model2vec / sentence-transformers pins
+      README.md             # method, MRPC download, scope / honesty note
 ```
 
 ## Data / schema notes
