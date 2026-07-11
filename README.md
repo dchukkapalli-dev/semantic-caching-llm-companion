@@ -6,8 +6,8 @@ evaluation section, and Contribution 5 with **runnable** artifacts.
 
 **Deposit.** Permanently archived on Zenodo under the concept DOI
 [10.5281/zenodo.20551823](https://doi.org/10.5281/zenodo.20551823) (always resolves to
-the latest version; v1.0.0 specifically:
-[10.5281/zenodo.20551824](https://doi.org/10.5281/zenodo.20551824)). Source mirror at
+the latest version; v1.0.3 specifically:
+[10.5281/zenodo.21305079](https://doi.org/10.5281/zenodo.21305079)). Source mirror at
 <https://github.com/dchukkapalli-dev/semantic-caching-llm-companion>.
 
 ## What this IS

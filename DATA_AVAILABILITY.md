@@ -14,7 +14,7 @@ symbol-to-text encoding documented in `companion/README.md`. Together these let 
 taxonomy coding be audited and any bounded-error claim be reproduced without
 specialized hardware. The companion is permanently archived on Zenodo under the
 concept DOI [10.5281/zenodo.20551823](https://doi.org/10.5281/zenodo.20551823)
-(which always resolves to the latest version; this paper corresponds to v1.0.0,
-[10.5281/zenodo.20551824](https://doi.org/10.5281/zenodo.20551824)), with the code
+(which always resolves to the latest version; this paper corresponds to v1.0.3,
+[10.5281/zenodo.21305079](https://doi.org/10.5281/zenodo.21305079)), with the code
 released under the MIT license, the data and schema under CC-BY-4.0, and a source
 mirror at <https://github.com/dchukkapalli-dev/semantic-caching-llm-companion>.
